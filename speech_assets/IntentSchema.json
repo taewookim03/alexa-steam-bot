@@ -1,0 +1,43 @@
+{
+  "intents": [
+    {
+      "intent": "NewReleasesIntent",
+      "slots": [
+        {
+          "name": "genre",
+          "type": "GENRE"
+        }
+      ]
+    },
+    {
+      "intent": "TopSellersIntent",
+      "slots": [
+        {
+          "name": "genre",
+          "type": "GENRE"
+        }
+      ]
+    },
+    {
+      "intent": "SpecialsIntent",
+      "slots": [
+        {
+          "name": "genre",
+          "type": "GENRE"
+        }
+      ]
+    },
+    {
+      "intent": "MoreIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
