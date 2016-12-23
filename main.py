@@ -2,13 +2,8 @@ from flask import Flask, render_template
 from flask_ask import Ask, statement, question, session
 import requests
 import json
-from urllib import urlopen
-
 import logging
-
-#info for using steam api (unnecessary for the current functions)
-api_key = ''
-steam_id = ''
+from steam_scraper import *
 
 app = Flask(__name__)
 ask = Ask(app, '/')#app at the root
@@ -21,48 +16,31 @@ logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 
 @app.route('/')
 def homepage():
-    return "news for steam home page"
+    return "steam bot home page"
 
 @ask.launch
 def start_skill():
-    welcome_message = "Welcome to Steam News. Say [put instructions here]."
+    welcome_message = "Welcome to Steam Bot. Say [put instructions here]."
     return statement(welcome_message)
-
-# @ask.intent("GameIntent")
-# def game_intent(game):
-#    print game
-#    return statement("you entered " + game)
-
-def get_url(genre, tab):
-    """
-    :param genre: Action, Adventure, Strategy, Casual, etc. (based on Steam's Popular Tags http://store.steampowered.com/tag/browse/#global_492
-    :param tab: NewReleases, TopSellers, Specials (Discounts)
-    :return: url of the web page containing desired data
-    """
-    url = ''
-    if genre == "Overall":
-        url = "http://store.steampowered.com/search/?filter=topsellers"
-    else:
-
-    return
-
 
 
 @ask.intent("NewReleasesIntent", default={"genre":"Overall"})
 def new_releases(genre):
-    url = "something"
+    url = get_games(genre, "NewReleases")
 
     return question("new releases")
 
 @ask.intent("TopSellersIntent", default={"genre":"Overall"})
 def top_sellers(genre):
-    url = "http://store.steampowered.com/search/?{}{}".format(genre_tag(genre), filtr)
+    games = get_games(genre, "TopSellers")
 
     return question("top sellers")
 #do you want more? say yes, more or no, stop
 
 @ask.intent("SpecialsIntent", default={"genre":"Overall"})
 def specials(genre):
+    url = get_games(genre, "Specials")
+
     return question("specials")
 
 @ask.intent("MoreIntent")
