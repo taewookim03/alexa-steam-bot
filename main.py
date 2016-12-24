@@ -27,11 +27,8 @@ def start_skill():
 def new_releases(genre):
     #note: for overall genre, top popular releases. for specific genre, just newest releases
     games = get_games(genre, "NewReleases")#list of Game objects according to the criteria
-    speech_output = ""
-    if genre == 'Overall':
-        speech_output += "top 10 popular releases "
-    else:
-        speech_output += "10 newest releases in "
+    speech_output = "top 10 popular releases "
+    if genre != 'Overall': speech_output += "in "
     speech_output += genre + ". "
 
     game_titles = [str(game) for game in games]
