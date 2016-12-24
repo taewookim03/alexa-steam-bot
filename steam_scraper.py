@@ -11,7 +11,7 @@ overall_tab_url = {"NewReleases":"http://store.steampowered.com/explore/new/",
                    "Specials":"http://store.steampowered.com/search/?specials=1"}
 
 #simple struct-like class to hold game data
-class game(object):
+class Game(object):
     __slots__ = ['title', 'discount_pct', 'final_price']
     def __init__(self, title=u'', discount_pct=0, final_price=0.00):
         self.title = title
@@ -21,7 +21,13 @@ class game(object):
     def __repr__(self):
         return self.title + ': $' + str(self.final_price) + ' (' + str(self.discount_pct) + '%)'
 
-def get_games(genre, tab, page_num):
+    def __str__(self):
+        s = self.title + ", "
+        if self.discount_pct != 0: s += str(abs(self.discount_pct)) + "% off for "
+        s += "${0:.2f}".format(self.final_price)
+        return s
+
+def get_games(genre, tab):
     """
     :param genre: Action, Adventure, Strategy, Casual, etc. (based on Steam's Popular Tags http://store.steampowered.com/tag/browse/#global_492
     :param tab: NewReleases, TopSellers, Specials (Discounts)
@@ -32,11 +38,11 @@ def get_games(genre, tab, page_num):
     else:
         if tab == "Specials":
             tab = "Discounts"
-        url = "http://store.steampowered.com/tag/en/{}/#p={}&tab={}".format(urllib.quote(genre), page_num, tab)#tag is encoded for url
+        url = "http://store.steampowered.com/tag/en/{}/#p=0&tab=NewReleases".format(urllib.quote(genre))#tag is encoded for url
+        #url = "http://store.steampowered.com/search/?tags={}&page={}"
 
     #r = requests.get(url)
     #print r.text
-
 
     #check if url opens
 
@@ -44,21 +50,19 @@ def get_games(genre, tab, page_num):
     #scrape data
     #url = "http://store.steampowered.com/search/?tags=1698&page=2"
     #url = "http://store.steampowered.com/tag/browse/#global_492"
-
     page = urllib.urlopen(url)
     soup = BeautifulSoup(page, "html.parser")
 
-    print soup.prettify()
-
+    #print soup.prettify()
     #print url
-    tag = soup.find("div", id="NewReleasesRows")
+    #print tab
+
+    tag = soup.find("div", id=tab+"Rows")
 
     games = []
     for child in tag.children:
-        #print child
-
         if type(child) == type(tag):
-            game_data = game()
+            game_data = Game()
             for d in child.descendants:
                 if type(d) == type(tag):
                     try:
@@ -75,5 +79,5 @@ def get_games(genre, tab, page_num):
     return games
 
 #test
-p = get_games("Point & Click", "NewReleases", 2)
+#p = get_games("Action", "Specials")
 
