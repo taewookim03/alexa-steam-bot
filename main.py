@@ -26,7 +26,11 @@ def start_skill():
 @ask.intent('NewReleasesIntent', default={'genre':'Overall'})
 def new_releases(genre):
     #note: for overall genre, top popular releases. for specific genre, just newest releases
-    games = get_games(genre, "NewReleases")#list of Game objects according to the criteria
+    try:
+        games = get_games(genre, "NewReleases")#list of Game objects according to the criteria
+    except KeyError:
+        return statement("I did not get that. Please try again.")
+
     speech_output = "top 10 popular releases "
     if genre != 'Overall': speech_output += "in "
     speech_output += genre + ". "
@@ -38,7 +42,12 @@ def new_releases(genre):
 
 @ask.intent('TopSellersIntent', default={'genre':'Overall'})
 def top_sellers(genre):
-    games = get_games(genre, 'TopSellers')
+    genre = genre.encode("ascii").lower()
+    try:
+        games = get_games(genre, 'TopSellers')
+    except Exception as e:
+        return statement(str(e) + " is not a valid tag. Please try again.")
+
     speech_output = "top 10 sellers "
     if genre != 'Overall': speech_output += "in "
     speech_output += genre + ". "
@@ -50,7 +59,11 @@ def top_sellers(genre):
 
 @ask.intent('SpecialsIntent', default={'genre':'Overall'})
 def specials(genre):
-    games = get_games(genre, 'Specials')
+    try:
+        games = get_games(genre, 'Specials')
+    except:
+        return statement("I did not get that. Please try again.")
+
     speech_output = "top 10 special deals "
     if genre != 'Overall': speech_output += "in "
     speech_output += genre + ". "

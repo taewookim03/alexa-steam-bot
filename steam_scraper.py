@@ -448,7 +448,7 @@ def get_games(genre, tab):
     return games
 
 #test
-p = get_games("Action", "NewReleases")
+#p = get_games("Action", "NewReleases")
 
 
 

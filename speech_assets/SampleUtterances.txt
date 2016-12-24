@@ -1,2 +1,3 @@
-TopSellersIntent give me the top sellers
-TopSellersIntent what are the top sellers
+TopSellersIntent give me the top sellers for {genre}
+TopSellersIntent tell me the top sellers for {genre}
+TopSellersIntent what are the top sellers for {genre}
