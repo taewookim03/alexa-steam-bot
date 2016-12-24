@@ -25,14 +25,18 @@ def start_skill():
 
 @ask.intent('NewReleasesIntent', default={'genre':'Overall'})
 def new_releases(genre):
+    #note: for overall genre, top popular releases. for specific genre, just newest releases
     games = get_games(genre, "NewReleases")#list of Game objects according to the criteria
-    speech_output = "10 newest releases "
-    if genre != 'Overall': speech_output += "in "
+    speech_output = ""
+    if genre == 'Overall':
+        speech_output += "top 10 popular releases "
+    else:
+        speech_output += "10 newest releases in "
     speech_output += genre + ". "
 
     game_titles = [str(game) for game in games]
     speech_output += ". ".join(game_titles)
-    
+
     return statement(speech_output)
 
 @ask.intent('TopSellersIntent', default={'genre':'Overall'})
@@ -59,7 +63,7 @@ def specials(genre):
 
     return statement("specials")
 
-# not implemented due to the lack of steam api
+# not implemented due to the lack of steam api - implement for overall?
 # @ask.intent("MoreIntent")
 # def more():
 #     #track which function the user just used and get more results from the same function.

@@ -6,7 +6,7 @@ api_key = ''
 steam_id = ''
 
 #new releases is popular new releases
-overall_tab_url = {"NewReleases":"http://store.steampowered.com/explore/new/",
+overall_tab_url = {"NewReleases":"http://store.steampowered.com/search/?filter=popularnew&sort_by=Released_DESC",
                    "TopSellers":"http://store.steampowered.com/search/?filter=topsellers",
                    "Specials":"http://store.steampowered.com/search/?specials=1"}
 
@@ -23,8 +23,11 @@ class Game(object):
 
     def __str__(self):
         s = self.title + ", "
-        if self.discount_pct != 0: s += str(abs(self.discount_pct)) + "% off for "
-        s += "${0:.2f}".format(self.final_price)
+        if self.final_price == 0.00:
+            s += "free"
+        else:
+            if self.discount_pct != 0: s += str(abs(self.discount_pct)) + "% off for "
+            s += "${0:.2f}".format(self.final_price)
         return s
 
 def get_games(genre, tab):
@@ -41,23 +44,26 @@ def get_games(genre, tab):
         url = "http://store.steampowered.com/tag/en/{}/#p=0&tab=NewReleases".format(urllib.quote(genre))#tag is encoded for url
         #url = "http://store.steampowered.com/search/?tags={}&page={}"
 
-    #r = requests.get(url)
-    #print r.text
-
-    #check if url opens
-
-
     #scrape data
     #url = "http://store.steampowered.com/search/?tags=1698&page=2"
     #url = "http://store.steampowered.com/tag/browse/#global_492"
-    page = urllib.urlopen(url)
+
+    # check if url opens
+    try:
+        page = urllib.urlopen(url)
+    except:
+        raise IOError("invalid url")
+
     soup = BeautifulSoup(page, "html.parser")
 
-    #print soup.prettify()
-    #print url
-    #print tab
+    print soup.prettify()
 
-    tag = soup.find("div", id=tab+"Rows")
+    overall_tab_id = {'NewReleases':'tab_newreleases_content'}
+    if genre == 'Overall':
+        tab_id = overall_tab_id[tab]
+    else:
+        tab_id = tab + 'Rows'
+    tag = soup.find("div", id=tab_id)
 
     games = []
     for child in tag.children:
@@ -69,9 +75,15 @@ def get_games(genre, tab):
                         if d["class"] == [u"tab_item_name"]:
                             game_data.title = d.contents[0].encode('ascii', 'ignore')#ignore unicode in game title
                         elif d["class"] == [u"discount_pct"]:
-                            game_data.discount_pct = (int)(d.contents[0].rstrip('%'))
+                            try:
+                                game_data.discount_pct = (int)(d.contents[0].rstrip('%'))
+                            except:
+                                pass#free to play
                         elif d["class"] == [u"discount_final_price"]:
-                            game_data.final_price = (float)(d.contents[0].lstrip('$'))
+                            try:
+                                game_data.final_price = (float)(d.contents[0].lstrip('$'))
+                            except:
+                                pass#free to play
                     except KeyError:
                         pass
             games.append(game_data)
@@ -79,5 +91,5 @@ def get_games(genre, tab):
     return games
 
 #test
-#p = get_games("Action", "Specials")
+p = get_games("Overall", "TopSellers")
 

@@ -1,4 +1,2 @@
-GameIntent {game}
-
 TopSellersIntent give me the top sellers
 TopSellersIntent what are the top sellers
