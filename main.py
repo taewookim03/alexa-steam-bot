@@ -53,6 +53,7 @@ def top_sellers(genre):
 
     game_titles = [str(game) for game in games]
     speech_output += ". ".join(game_titles)
+    #speech_output += "</speak>"
 
     return statement(speech_output)
 

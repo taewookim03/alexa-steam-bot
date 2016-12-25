@@ -1,3 +1,76 @@
-TopSellersIntent give me the top sellers for {genre}
-TopSellersIntent tell me the top sellers for {genre}
+
+TopSellersIntent top sellers
+TopSellersIntent top sellers in {genre}
+TopSellersIntent top sellers for {genre}
+TopSellersIntent the top sellers
+TopSellersIntent the top sellers in {genre}
+TopSellersIntent the top sellers for {genre}
+TopSellersIntent for top sellers
+TopSellersIntent for top sellers in {genre}
+TopSellersIntent for top sellers for {genre}
+TopSellersIntent for the top sellers
+TopSellersIntent for the top sellers in {genre}
+TopSellersIntent for the top sellers for {genre}
+TopSellersIntent what are top sellers
+TopSellersIntent what are top sellers in {genre}
+TopSellersIntent what are top sellers for {genre}
+TopSellersIntent what are the top sellers
+TopSellersIntent what are the top sellers in {genre}
 TopSellersIntent what are the top sellers for {genre}
+TopSellersIntent get me top sellers
+TopSellersIntent get me top sellers in {genre}
+TopSellersIntent get me top sellers for {genre}
+TopSellersIntent get me the top sellers
+TopSellersIntent get me the top sellers in {genre}
+TopSellersIntent get me the top sellers for {genre}
+TopSellersIntent give me top sellers
+TopSellersIntent give me top sellers in {genre}
+TopSellersIntent give me top sellers for {genre}
+TopSellersIntent give me the top sellers
+TopSellersIntent give me the top sellers in {genre}
+TopSellersIntent give me the top sellers for {genre}
+TopSellersIntent tell me top sellers
+TopSellersIntent tell me top sellers in {genre}
+TopSellersIntent tell me top sellers for {genre}
+TopSellersIntent tell me the top sellers
+TopSellersIntent tell me the top sellers in {genre}
+TopSellersIntent tell me the top sellers for {genre}
+
+
+TopSellersIntent top sellers
+TopSellersIntent top sellers in {genre}
+TopSellersIntent top sellers for {genre}
+TopSellersIntent the top sellers
+TopSellersIntent the top sellers in {genre}
+TopSellersIntent the top sellers for {genre}
+TopSellersIntent for top sellers
+TopSellersIntent for top sellers in {genre}
+TopSellersIntent for top sellers for {genre}
+TopSellersIntent for the top sellers
+TopSellersIntent for the top sellers in {genre}
+TopSellersIntent for the top sellers for {genre}
+TopSellersIntent what are top sellers
+TopSellersIntent what are top sellers in {genre}
+TopSellersIntent what are top sellers for {genre}
+TopSellersIntent what are the top sellers
+TopSellersIntent what are the top sellers in {genre}
+TopSellersIntent what are the top sellers for {genre}
+TopSellersIntent get me top sellers
+TopSellersIntent get me top sellers in {genre}
+TopSellersIntent get me top sellers for {genre}
+TopSellersIntent get me the top sellers
+TopSellersIntent get me the top sellers in {genre}
+TopSellersIntent get me the top sellers for {genre}
+TopSellersIntent give me top sellers
+TopSellersIntent give me top sellers in {genre}
+TopSellersIntent give me top sellers for {genre}
+TopSellersIntent give me the top sellers
+TopSellersIntent give me the top sellers in {genre}
+TopSellersIntent give me the top sellers for {genre}
+TopSellersIntent tell me top sellers
+TopSellersIntent tell me top sellers in {genre}
+TopSellersIntent tell me top sellers for {genre}
+TopSellersIntent tell me the top sellers
+TopSellersIntent tell me the top sellers in {genre}
+TopSellersIntent tell me the top sellers for {genre}
+
