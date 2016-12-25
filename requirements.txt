@@ -1,0 +1,6 @@
+Flask
+Flask-Ask
+HTMLParser
+beautifulsoup4
+romanify
+Levenshtein
