@@ -1,3 +1,9 @@
+NewReleasesIntent what is new
+NewReleasesIntent what is new in {genre}
+NewReleasesIntent what is new for {genre}
+NewReleasesIntent what's new
+NewReleasesIntent what's new in {genre}
+NewReleasesIntent what's new for {genre}
 NewReleasesIntent new releases
 NewReleasesIntent new releases in {genre}
 NewReleasesIntent new releases for {genre}
@@ -34,6 +40,42 @@ NewReleasesIntent tell me new releases for {genre}
 NewReleasesIntent tell me the new releases
 NewReleasesIntent tell me the new releases in {genre}
 NewReleasesIntent tell me the new releases for {genre}
+NewReleasesIntent new games
+NewReleasesIntent new games in {genre}
+NewReleasesIntent new games for {genre}
+NewReleasesIntent the new games
+NewReleasesIntent the new games in {genre}
+NewReleasesIntent the new games for {genre}
+NewReleasesIntent for new games
+NewReleasesIntent for new games in {genre}
+NewReleasesIntent for new games for {genre}
+NewReleasesIntent for the new games
+NewReleasesIntent for the new games in {genre}
+NewReleasesIntent for the new games for {genre}
+NewReleasesIntent what are new games
+NewReleasesIntent what are new games in {genre}
+NewReleasesIntent what are new games for {genre}
+NewReleasesIntent what are the new games
+NewReleasesIntent what are the new games in {genre}
+NewReleasesIntent what are the new games for {genre}
+NewReleasesIntent get me new games
+NewReleasesIntent get me new games in {genre}
+NewReleasesIntent get me new games for {genre}
+NewReleasesIntent get me the new games
+NewReleasesIntent get me the new games in {genre}
+NewReleasesIntent get me the new games for {genre}
+NewReleasesIntent give me new games
+NewReleasesIntent give me new games in {genre}
+NewReleasesIntent give me new games for {genre}
+NewReleasesIntent give me the new games
+NewReleasesIntent give me the new games in {genre}
+NewReleasesIntent give me the new games for {genre}
+NewReleasesIntent tell me new games
+NewReleasesIntent tell me new games in {genre}
+NewReleasesIntent tell me new games for {genre}
+NewReleasesIntent tell me the new games
+NewReleasesIntent tell me the new games in {genre}
+NewReleasesIntent tell me the new games for {genre}
 
 TopSellersIntent top sellers
 TopSellersIntent top sellers in {genre}
