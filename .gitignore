@@ -50,3 +50,4 @@ steam_tags_generator.py
 speech_assets/tempList.txt
 speech_assets/GENRE_backup
 steam_scraper_backup_working_genre.py
+settings.py
