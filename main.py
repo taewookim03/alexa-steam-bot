@@ -42,7 +42,6 @@ def new_releases(genre):
 
 @ask.intent('TopSellersIntent', default={'genre':'Overall'})
 def top_sellers(genre):
-    genre = genre.encode("ascii").lower()
     try:
         games = get_games(genre, 'TopSellers')
     except Exception as e:
