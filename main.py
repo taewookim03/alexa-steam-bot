@@ -1,7 +1,5 @@
 from flask import Flask, render_template
 from flask_ask import Ask, statement, question, session
-import requests
-import json
 import logging
 from steam_scraper import *
 

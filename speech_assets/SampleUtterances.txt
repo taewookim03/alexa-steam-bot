@@ -159,6 +159,3 @@ SpecialsIntent tell me specials for {genre}
 SpecialsIntent tell me the specials
 SpecialsIntent tell me the specials in {genre}
 SpecialsIntent tell me the specials for {genre}
-SpecialsIntent what is on sale
-SpecialsIntent what is on sale in {genre}
-SpecialsIntent what is on sale for {genre}
