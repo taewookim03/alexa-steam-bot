@@ -1,5 +1,7 @@
 import romanify
-from Levenshtein import distance
+#from Levenshtein import distance
+#import editdistance
+import distance
 
 #custom dictionary that supports fuzzy string matching (Levenshtein distance and numerical representations)
 class FuzzyDict(dict):
@@ -40,8 +42,11 @@ class FuzzyDict(dict):
                 pass
 
         # if converting the keys did not work, see if any of the available tag names are similar
+        # for similar_key in self.keys():
+        #     if any ([distance(k, similar_key) <= 1 for k in keys]):#checking Levenshtein distance
+        #         return super(FuzzyDict, self).__getitem__(self.__class__._lowercase_key(similar_key))
         for similar_key in self.keys():
-            if any ([distance(k, similar_key) <= 1 for k in keys]):#checking Levenshtein distance
+            if any ([distance.levenshtein(k, similar_key) <= 1 for k in keys]):#checking Levenshtein distance
                 return super(FuzzyDict, self).__getitem__(self.__class__._lowercase_key(similar_key))
 
         raise KeyError

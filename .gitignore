@@ -51,3 +51,7 @@ speech_assets/tempList.txt
 speech_assets/GENRE_backup
 steam_scraper_backup_working_genre.py
 settings.py
+frozen_settings.py
+zappa_settings.json
+AWSCredentials.properties
+alexa-steam-bot-production-template-1482745872.json
