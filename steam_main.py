@@ -18,60 +18,39 @@ def homepage():
 
 @ask.launch
 def start_skill():
-    welcome_message = "Welcome to Steam Bot. Say [put instructions here]."
+    welcome_message = "welcome to steam bot. say, new games, top sellers, or specials, followed by optional genre," \
+                      " to get sales information from steam. for example, say: ask steam bot for top sellers in horror."
     return statement(welcome_message)
 
 @ask.intent('NewReleasesIntent', default={'genre':'Overall'})
 def new_releases(genre):
     #note: for overall genre, top popular releases. for specific genre, just newest releases
     try:
-        games = get_games(genre, "NewReleases")#list of Game objects according to the criteria
+        speech_output = get_games_speech(genre, 'NewReleases')
     except KeyError:
-        return statement("I did not get that. Please try again.")
-
-    speech_output = "top 10 popular releases "
-    if genre != 'Overall': speech_output += "in "
-    speech_output += genre + ". "
-
-    game_titles = [str(game) for game in games]
-    speech_output += ". ".join(game_titles)
+        return statement(genre + " is not a valid tag.")
 
     return statement(speech_output)
 
 @ask.intent('TopSellersIntent', default={'genre':'Overall'})
 def top_sellers(genre):
     try:
-        games = get_games(genre, 'TopSellers')
-    except Exception as e:
-        return statement(str(e) + " is not a valid tag. Please try again.")
-
-    speech_output = "top 10 sellers "
-    if genre != 'Overall': speech_output += "in "
-    speech_output += genre + ". "
-
-    game_titles = [str(game) for game in games]
-    speech_output += ". ".join(game_titles)
-    #speech_output += "</speak>"
+        speech_output = get_games_speech(genre, 'TopSellers')
+    except KeyError:
+        return statement(genre + " is not a valid tag.")
 
     return statement(speech_output)
 
 @ask.intent('SpecialsIntent', default={'genre':'Overall'})
 def specials(genre):
     try:
-        games = get_games(genre, 'Specials')
-    except:
-        return statement("I did not get that. Please try again.")
+        speech_output = get_games_speech(genre, 'Specials')
+    except KeyError:
+        return statement(genre + " is not a valid tag.")
 
-    speech_output = "top 10 special deals "
-    if genre != 'Overall': speech_output += "in "
-    speech_output += genre + ". "
+    return statement(speech_output)
 
-    game_titles = [str(game) for game in games]
-    speech_output += ". ".join(game_titles)
-
-    return statement("specials")
-
-# not implemented due to the lack of steam api - implement for overall?
+# not implemented due to the lack of steam api - possible implementation later
 # @ask.intent("MoreIntent")
 # def more():
 #     #track which function the user just used and get more results from the same function.

@@ -407,21 +407,11 @@ def get_games(genre, tab):
 
     games_set = soup.find_all("div", class_="responsive_search_name_combined")#finds all game data (html)
 
-    #consider cases when games found is 0 or less than 10 etc. (end reached)
-
-    #print type(games_set)
-
     games = []
     for tag in games_set:
         game_data = Game()
-        #print len(tag)
         for child in tag.descendants:
             if type(child) == type(tag):
-                # try:
-                #     print child["class"]
-                # except:
-                #     pass
-
                 try:
                     if child["class"] == [u'title']:
                         game_data.title = child.contents[0].encode('ascii', 'ignore')\
@@ -430,7 +420,7 @@ def get_games(genre, tab):
                         try:
                             game_data.discount_pct = (int)(child.contents[1].string.strip('%'))
                         except:
-                            pass#free to play
+                            pass#if above doesn't extract discount %, the game is free to play
 
                     #note: it seems child.contents[0] gets the full price for non-discounted items,
                     # child.contents[1] gets the full price for discounted items,
@@ -449,11 +439,26 @@ def get_games(genre, tab):
                 except KeyError:#happens when tag does not have a class attribute (not interested in such tags)
                     pass
         games.append(game_data)
-    print games
+    #print games
     return games
 
+def get_games_speech(genre, criterion):
+    games = get_games(genre, criterion)#list of Game objects according to the criteria
+    filter_description = {'NewReleases':"top 10 popular releases ",
+                          'TopSellers':"top 10 sellers ",
+                          'Specials':"top 10 special deals "}
+
+    speech_output = filter_description[criterion]
+    if genre != 'Overall': speech_output += "in "
+    speech_output += genre + ". "
+
+    game_titles = [str(game) for game in games]
+    speech_output += ". ".join(game_titles)
+
+    return speech_output
+
 #test
-p = get_games("india", "NewReleases")
+#print get_games_speech("indie", "NewReleases")
 
 
 

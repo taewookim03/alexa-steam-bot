@@ -17,14 +17,6 @@ class FuzzyDict(dict):
             if letter not in romans: return False
         return True
 
-    def update_key(self, old_key, new_key):
-        """
-        This function should be called explicitly after a call to __getitem__ to update the key
-        in case of approximate string match. This function cannot be in __getitem__ due to recursion.
-        """
-        self[new_key] = self[old_key]
-        del self[old_key]
-
     def __init__(self, *args, **kwargs):
         super(FuzzyDict, self).__init__(*args, **kwargs)
         self._convert_keys()
@@ -54,7 +46,7 @@ class FuzzyDict(dict):
         for similar_key in self.keys():
             for k in keys:
                 if distance.levenshtein(k, similar_key) <= 1:#checking Levenshtein distance
-                    self.new_key = similar_key#for updating the key
+                    #self.new_key = similar_key#store actual match
                     return super(FuzzyDict, self).__getitem__(self.__class__._lowercase_key(similar_key))
 
         #if no keys found
