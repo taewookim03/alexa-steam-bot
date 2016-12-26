@@ -1,5 +1,4 @@
 import romanify
-#from Levenshtein import distance
 #import editdistance
 import distance
 
@@ -18,9 +17,18 @@ class FuzzyDict(dict):
             if letter not in romans: return False
         return True
 
+    def update_key(self, old_key, new_key):
+        """
+        This function should be called explicitly after a call to __getitem__ to update the key
+        in case of approximate string match. This function cannot be in __getitem__ due to recursion.
+        """
+        self[new_key] = self[old_key]
+        del self[old_key]
+
     def __init__(self, *args, **kwargs):
         super(FuzzyDict, self).__init__(*args, **kwargs)
         self._convert_keys()
+        self.new_key = ''#updated key that should replace the old key based on approximate matching
 
     def __getitem__(self, key):
         # try both forms of a number as key - key being a game tag, it is unlikely that it will contain multiple
@@ -33,7 +41,7 @@ class FuzzyDict(dict):
             if word.isdigit():
                 key_roman = key_roman.replace(word, str(romanify.arabic2roman(word)))
 
-        keys = [key, key_arabic, key_roman]
+        keys = [key, key_arabic, key_roman]#possible keys
 
         for k in keys:
             try:
@@ -41,14 +49,15 @@ class FuzzyDict(dict):
             except:
                 pass
 
-        # if converting the keys did not work, see if any of the available tag names are similar
-        # for similar_key in self.keys():
-        #     if any ([distance(k, similar_key) <= 1 for k in keys]):#checking Levenshtein distance
-        #         return super(FuzzyDict, self).__getitem__(self.__class__._lowercase_key(similar_key))
+        # if multiple numerical representations keys did not work, see if any of the available tag names are similar
+        # if any tags are similar (e.g. trackIR vs track IR or Indie vs India), return value
         for similar_key in self.keys():
-            if any ([distance.levenshtein(k, similar_key) <= 1 for k in keys]):#checking Levenshtein distance
-                return super(FuzzyDict, self).__getitem__(self.__class__._lowercase_key(similar_key))
+            for k in keys:
+                if distance.levenshtein(k, similar_key) <= 1:#checking Levenshtein distance
+                    self.new_key = similar_key#for updating the key
+                    return super(FuzzyDict, self).__getitem__(self.__class__._lowercase_key(similar_key))
 
+        #if no keys found
         raise KeyError
 
     def __setitem__(self, key, value):

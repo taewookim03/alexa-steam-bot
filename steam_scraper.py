@@ -453,7 +453,7 @@ def get_games(genre, tab):
     return games
 
 #test
-#p = get_games("world war 2", "NewReleases")
+p = get_games("india", "NewReleases")
 
 
 
