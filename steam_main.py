@@ -12,13 +12,15 @@ log.addHandler(logging.StreamHandler())
 log.setLevel(logging.DEBUG)
 logging.getLogger('flask_ask').setLevel(logging.DEBUG)
 
+INVOCATION_NAME = "steam bot"
+
 @app.route('/')
 def homepage():
-    return "steam bot home page"
+    return INVOCATION_NAME + " home page"
 
 @ask.launch
 def start_skill():
-    welcome_message = "welcome to steam bot. say, new games, top sellers, or specials, followed by optional genre," \
+    welcome_message = "welcome to " + INVOCATION_NAME + ". say, new games, top sellers, or specials, followed by optional genre," \
                       " to get sales information from steam. for example, say: ask steam bot for top sellers in horror."
     return statement(welcome_message)
 
@@ -69,27 +71,6 @@ def cancel():
 def session_ended():
     log.debug("Session ended")
     return '', 200#http response code
-
-# def get_owned_games(apikey, steamid):
-#     url = ("http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/"
-#            "?key={}&steamid={}&include_appinfo=1".format(apikey, steamid))
-#     r = requests.get(url)
-#     return json.loads(r.text)["response"]["games"]
-# #for game in get_owned_games(api_key, steam_id):
-# #    print game['name']
-#
-# #cache this upon startup to reduce response delay
-# def get_all_games():
-#     url = "http://api.steampowered.com/ISteamApps/GetAppList/v0002/"
-#     r = requests.get(url)
-#     return json.loads(r.text)
-#print get_all_games()['applist']['apps'][0]
-
-#games = get_all_games()['applist']['apps']
-#dict = {}
-#for game in games:
-#    dict[game['name']] = game['appid']
-#print dict
 
 if __name__ == "__main__":
     app.run(debug=True)
