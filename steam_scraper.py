@@ -445,9 +445,9 @@ def get_games(genre, tab):
 
 def get_games_speech(genre, criterion):
     games = get_games(genre, criterion)#list of Game objects according to the criteria
-    filter_description = {'NewReleases':"top 10 popular releases ",
-                          'TopSellers':"top 10 sellers ",
-                          'Specials':"top 10 special deals "}
+    filter_description = {'NewReleases':"popular releases ",
+                          'TopSellers':"top sellers ",
+                          'Specials':"special deals "}
 
     speech_output = filter_description[criterion]
     if genre != 'Overall': speech_output += "in "
@@ -482,7 +482,6 @@ def get_games_speech(genre, criterion):
 #for game in games:
 #    dict[game['name']] = game['appid']
 #print dict
-
 
 
 

@@ -28,9 +28,6 @@
       ]
     },
     {
-      "intent": "MoreIntent"
-    },
-    {
       "intent": "AMAZON.HelpIntent"
     },
     {
