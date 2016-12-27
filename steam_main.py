@@ -12,7 +12,7 @@ log.addHandler(logging.StreamHandler())
 log.setLevel(logging.DEBUG)
 logging.getLogger('flask_ask').setLevel(logging.DEBUG)
 
-INVOCATION_NAME = "steam bot"
+INVOCATION_NAME = "hot dog"
 
 @app.route('/')
 def homepage():
@@ -20,8 +20,9 @@ def homepage():
 
 @ask.launch
 def start_skill():
-    welcome_message = "welcome to " + INVOCATION_NAME + ". say, new games, top sellers, or specials, followed by optional genre," \
-                      " to get sales information from steam. for example, say: ask steam bot for top sellers in horror."
+    welcome_message = "welcome to " + INVOCATION_NAME + " for steam. say, new games, top sellers, or specials, " \
+                      "followed by optional genre, to get sales information from steam. for example, say: ask " \
+                      + INVOCATION_NAME + " for top sellers in horror."
     return statement(welcome_message)
 
 @ask.intent('NewReleasesIntent', default={'genre':'Overall'})

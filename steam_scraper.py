@@ -445,7 +445,7 @@ def get_games(genre, tab):
 
 def get_games_speech(genre, criterion):
     games = get_games(genre, criterion)#list of Game objects according to the criteria
-    filter_description = {'NewReleases':"popular releases ",
+    filter_description = {'NewReleases':"popular new releases ",
                           'TopSellers':"top sellers ",
                           'Specials':"special deals "}
 
