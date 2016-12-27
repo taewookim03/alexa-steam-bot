@@ -450,7 +450,8 @@ def get_games_speech(genre, criterion):
                           'Specials':"special deals "}
 
     speech_output = filter_description[criterion]
-    if genre != 'Overall': speech_output += "in "
+    #overall is capitalized if default genre, not if explicitly passed.
+    if not(genre == 'Overall' or genre == 'overall'): speech_output += "in "
     speech_output += genre + ". "
 
     game_titles = [str(game) for game in games]
