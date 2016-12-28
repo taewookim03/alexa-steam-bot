@@ -1,10 +1,11 @@
-This skill reads a list of up to 25 games in a specified tag (such as adventure, horror, co-op, etc.)  according to the following filters: popular new releases, top sellers, or specials, as according to Steam store.
+Use this skill to track popular new releases, top sellers and special deals on the Steam store!
+
+This skill reads a list of up to 25 games or apps on the Steam store, in the specified tag (such as adventure, horror, co-op, etc.) and filter (popular new releases, top sellers, or special deals).
 
 Supports up to 330 most popular game tags as found here (as of 12/26/2016): http://store.steampowered.com/tag/browse/#global_492
+Search can cover all games if no tag is provided or an "overall" tag is explicitly provided. 
 
 Invoke the skill in the following format:
-Alexa, ask hot dog for [filter] in [tag].
+"Alexa, ask hot dog for ("new games" or "new releases" / "top sellers" / "specials") in [tag]." See example phrases below.
 
-Games can be searched without tags if no tag is provided or a tag of "overall" is explicitly provided.
-
-Alexa will read the first 25 games following the specified criteria in the format of [title], [discount %], [final price]
+Alexa will read the first 25 games following the specified criteria in the format of [title], [discount %], [final price].
