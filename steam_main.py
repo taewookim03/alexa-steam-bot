@@ -21,8 +21,7 @@ def homepage():
 @ask.launch
 def start_skill():
     welcome_message = "welcome to " + INVOCATION_NAME + " for steam. say, new games, top sellers, or specials, " \
-                      "followed by optional genre, to get sales information from steam. for example, say: ask " \
-                      + INVOCATION_NAME + " for top sellers in horror."
+                      "followed by optional tag, to get sales information from steam. for example, say: top sellers in horror."
     return question(welcome_message)
 
 @ask.intent('NewReleasesIntent', default={'genre':'Overall'})
