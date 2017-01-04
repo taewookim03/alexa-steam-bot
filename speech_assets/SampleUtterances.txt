@@ -1,161 +1,108 @@
 NewReleasesIntent what is new
-NewReleasesIntent what is new {genre}
 NewReleasesIntent what is new in {genre}
 NewReleasesIntent what's new
-NewReleasesIntent what's new {genre}
 NewReleasesIntent what's new in {genre}
 NewReleasesIntent new releases
-NewReleasesIntent new releases {genre}
 NewReleasesIntent new releases in {genre}
 NewReleasesIntent the new releases
-NewReleasesIntent the new releases {genre}
 NewReleasesIntent the new releases in {genre}
 NewReleasesIntent for new releases
-NewReleasesIntent for new releases {genre}
 NewReleasesIntent for new releases in {genre}
 NewReleasesIntent for the new releases
-NewReleasesIntent for the new releases {genre}
 NewReleasesIntent for the new releases in {genre}
 NewReleasesIntent what are new releases
-NewReleasesIntent what are new releases {genre}
 NewReleasesIntent what are new releases in {genre}
 NewReleasesIntent what are the new releases
-NewReleasesIntent what are the new releases {genre}
 NewReleasesIntent what are the new releases in {genre}
 NewReleasesIntent get me new releases
-NewReleasesIntent get me new releases {genre}
 NewReleasesIntent get me new releases in {genre}
 NewReleasesIntent get me the new releases
-NewReleasesIntent get me the new releases {genre}
 NewReleasesIntent get me the new releases in {genre}
 NewReleasesIntent give me new releases
-NewReleasesIntent give me new releases {genre}
 NewReleasesIntent give me new releases in {genre}
 NewReleasesIntent give me the new releases
-NewReleasesIntent give me the new releases {genre}
 NewReleasesIntent give me the new releases in {genre}
 NewReleasesIntent tell me new releases
-NewReleasesIntent tell me new releases {genre}
 NewReleasesIntent tell me new releases in {genre}
 NewReleasesIntent tell me the new releases
-NewReleasesIntent tell me the new releases {genre}
 NewReleasesIntent tell me the new releases in {genre}
 NewReleasesIntent new games
-NewReleasesIntent new games {genre}
 NewReleasesIntent new games in {genre}
 NewReleasesIntent the new games
-NewReleasesIntent the new games {genre}
 NewReleasesIntent the new games in {genre}
 NewReleasesIntent for new games
-NewReleasesIntent for new games {genre}
 NewReleasesIntent for new games in {genre}
 NewReleasesIntent for the new games
-NewReleasesIntent for the new games {genre}
 NewReleasesIntent for the new games in {genre}
 NewReleasesIntent what are new games
-NewReleasesIntent what are new games {genre}
 NewReleasesIntent what are new games in {genre}
 NewReleasesIntent what are the new games
-NewReleasesIntent what are the new games {genre}
 NewReleasesIntent what are the new games in {genre}
 NewReleasesIntent get me new games
-NewReleasesIntent get me new games {genre}
 NewReleasesIntent get me new games in {genre}
 NewReleasesIntent get me the new games
-NewReleasesIntent get me the new games {genre}
 NewReleasesIntent get me the new games in {genre}
 NewReleasesIntent give me new games
-NewReleasesIntent give me new games {genre}
 NewReleasesIntent give me new games in {genre}
 NewReleasesIntent give me the new games
-NewReleasesIntent give me the new games {genre}
 NewReleasesIntent give me the new games in {genre}
 NewReleasesIntent tell me new games
-NewReleasesIntent tell me new games {genre}
 NewReleasesIntent tell me new games in {genre}
 NewReleasesIntent tell me the new games
-NewReleasesIntent tell me the new games {genre}
 NewReleasesIntent tell me the new games in {genre}
 
 TopSellersIntent top sellers
-TopSellersIntent top sellers {genre}
 TopSellersIntent top sellers in {genre}
 TopSellersIntent the top sellers
-TopSellersIntent the top sellers {genre}
 TopSellersIntent the top sellers in {genre}
 TopSellersIntent for top sellers
-TopSellersIntent for top sellers {genre}
 TopSellersIntent for top sellers in {genre}
 TopSellersIntent for the top sellers
-TopSellersIntent for the top sellers {genre}
 TopSellersIntent for the top sellers in {genre}
 TopSellersIntent what are top sellers
-TopSellersIntent what are top sellers {genre}
 TopSellersIntent what are top sellers in {genre}
 TopSellersIntent what are the top sellers
-TopSellersIntent what are the top sellers {genre}
 TopSellersIntent what are the top sellers in {genre}
 TopSellersIntent get me top sellers
-TopSellersIntent get me top sellers {genre}
 TopSellersIntent get me top sellers in {genre}
 TopSellersIntent get me the top sellers
-TopSellersIntent get me the top sellers {genre}
 TopSellersIntent get me the top sellers in {genre}
 TopSellersIntent give me top sellers
-TopSellersIntent give me top sellers {genre}
 TopSellersIntent give me top sellers in {genre}
 TopSellersIntent give me the top sellers
-TopSellersIntent give me the top sellers {genre}
 TopSellersIntent give me the top sellers in {genre}
 TopSellersIntent tell me top sellers
-TopSellersIntent tell me top sellers {genre}
 TopSellersIntent tell me top sellers in {genre}
 TopSellersIntent tell me the top sellers
-TopSellersIntent tell me the top sellers {genre}
 TopSellersIntent tell me the top sellers in {genre}
 
 SpecialsIntent what is on sale
-SpecialsIntent what is on sale {genre}
 SpecialsIntent what is on sale in {genre}
 SpecialsIntent what's on sale
-SpecialsIntent what's on sale {genre}
 SpecialsIntent what's on sale in {genre}
 SpecialsIntent what games are on sale
-SpecialsIntent what games are on sale {genre}
 SpecialsIntent what games are on on sale in {genre}
 SpecialsIntent specials
-SpecialsIntent specials {genre}
 SpecialsIntent specials in {genre}
 SpecialsIntent the specials
-SpecialsIntent the specials {genre}
 SpecialsIntent the specials in {genre}
 SpecialsIntent for specials
-SpecialsIntent for specials {genre}
 SpecialsIntent for specials in {genre}
 SpecialsIntent for the specials
-SpecialsIntent for the specials {genre}
 SpecialsIntent for the specials in {genre}
 SpecialsIntent what are specials
-SpecialsIntent what are specials {genre}
 SpecialsIntent what are specials in {genre}
 SpecialsIntent what are the specials
-SpecialsIntent what are the specials {genre}
 SpecialsIntent what are the specials in {genre}
 SpecialsIntent get me specials
-SpecialsIntent get me specials {genre}
 SpecialsIntent get me specials in {genre}
 SpecialsIntent get me the specials
-SpecialsIntent get me the specials {genre}
 SpecialsIntent get me the specials in {genre}
 SpecialsIntent give me specials
-SpecialsIntent give me specials {genre}
 SpecialsIntent give me specials in {genre}
 SpecialsIntent give me the specials
-SpecialsIntent give me the specials {genre}
 SpecialsIntent give me the specials in {genre}
 SpecialsIntent tell me specials
-SpecialsIntent tell me specials {genre}
 SpecialsIntent tell me specials in {genre}
 SpecialsIntent tell me the specials
-SpecialsIntent tell me the specials {genre}
 SpecialsIntent tell me the specials in {genre}
