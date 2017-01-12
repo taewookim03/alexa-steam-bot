@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_ask import Ask, statement, question, session
+from flask_ask import Ask, statement, question, session, request
 import logging
 from steam_scraper import *
 
@@ -14,6 +14,7 @@ logging.getLogger('flask_ask').setLevel(logging.DEBUG)
 
 INVOCATION_NAME = "hot dog"
 
+#to easily verify that the skill is online
 @app.route('/')
 def homepage():
     return INVOCATION_NAME + " home page"
@@ -21,7 +22,7 @@ def homepage():
 @ask.launch
 def start_skill():
     welcome_message = "welcome to " + INVOCATION_NAME + " for steam. say, new games, top sellers, or specials, " \
-                      "followed by optional tag, to get sales information from steam. for example, say: top sellers in horror."
+                      "followed by optional tag, to get sales information from steam. for example, say: top sellers in strategy."
     return question(welcome_message)
 
 @ask.intent('NewReleasesIntent', default={'genre':'Overall'})
@@ -58,19 +59,27 @@ def specials(genre):
 #     #track which function the user just used and get more results from the same function.
 #     #e.g. if user asked for top games in horror, get more games in horror
 #     return question("results")
+@ask.intent('AMAZON.HelpIntent')
+def help():
+    help_message = INVOCATION_NAME + " is a skill that allows you to browse games and apps on steam, sorted by tag " \
+                                     "and filter. for example, if you would like to know what strategy games are " \
+                                     "on sale in the steam store, you can say: specials in strategy. " \
+                                     "similarly, you can also ask for the new releases or top sellers in any " \
+                                     "of the popular steam tags by saying: new games in tag, or top sellers in tag. " \
+                                     "examples of steam tags include: indie, action, horror, adventure, racing, and many more. " \
+                                     "what would you like?"
+    return question(help_message)
 
-@ask.intent('AMAZON.Stop')
-def stop():
-    return statement("Goodbye")
 
+@ask.intent('AMAZON.StopIntent')
 @ask.intent('AMAZON.CancelIntent')
-def cancel():
-    return statement("Goodbye")
+def stop():
+    bye = "goodbye"
+    return statement(bye)
 
 @ask.session_ended
 def session_ended():
-    log.debug("Session ended")
-    return '', 200#http response code
+    return "", 200
 
 if __name__ == "__main__":
     app.run(debug=True)

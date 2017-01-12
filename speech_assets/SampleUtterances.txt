@@ -106,3 +106,11 @@ SpecialsIntent tell me specials
 SpecialsIntent tell me specials in {genre}
 SpecialsIntent tell me the specials
 SpecialsIntent tell me the specials in {genre}
+
+AMAZON.HelpIntent help
+
+AMAZON.StopIntent stop
+AMAZON.StopIntent quit
+AMAZON.StopIntent shut up
+
+AMAZON.CancelIntent cancel
