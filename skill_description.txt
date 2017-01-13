@@ -1,8 +1,8 @@
 Use this skill to track popular new releases, top sellers and special deals on the Steam store.
 
-This skill reads a list of up to 25 games or apps on the Steam store, in the specified tag (such as adventure, horror, co-op, etc.) and filter (popular new releases, top sellers, or special deals).
+This skill reads to you a list of up to 25 games or apps on the Steam store, in the specified tag (such as adventure, horror, co-op, etc.) and filter (popular new releases, top sellers, or special deals).
 
-Supports 330 most popular game tags as found here (as of 12/26/2016): http://store.steampowered.com/tag/browse/#global_492
+Supports 330 most popular game tags as found here: http://store.steampowered.com/tag/browse/#global_492
 Search can cover all games if no tag is provided (e.g. "give me top sellers") or an "overall" tag is explicitly provided (e.g. "new games in overall").
 
 Invoke the skill in the following format:

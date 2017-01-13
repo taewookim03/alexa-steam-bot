@@ -376,14 +376,14 @@ def get_games(genre, tab):
                      "TopSellers":"filter=topsellers",
                      "Specials":"specials=1"}
 
-    sort_param = ''
-    if tab == "NewReleases":
-        sort_param = "sort_by=Released_DESC&"
+    # sort_param = ''
+    # if tab == "NewReleases":
+    #     sort_param = "sort_by=Released_DESC&"
 
     tag_param = ''
     if genre != "overall":
         tag_param = "tags=" + tag_to_id[genre] + "&"
-    url = "http://store.steampowered.com/search/?{}{}{}".format(sort_param, tag_param, search_filter[tab])
+    url = "http://store.steampowered.com/search/?{}{}".format(tag_param, search_filter[tab])
     #print url
 
     #overall urls:
