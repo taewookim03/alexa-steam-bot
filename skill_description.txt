@@ -8,4 +8,4 @@ Search can cover all games if no tag is provided (e.g. "give me top sellers") or
 Invoke the skill in the following format:
 "Alexa, ask hot dog for ("new games" or "new releases" / "top sellers" / "specials") in [tag]." See example phrases below.
 
-Alexa will read the first 25 games following the specified criteria in the format of [title], [discount %], [final price].
+Alexa will read up to first 25 games corresponding to the specified criteria in the format of [title], [discount %], [final price].
