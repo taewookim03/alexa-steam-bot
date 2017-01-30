@@ -3,3 +3,5 @@ Alexa (Amazon Echo) skill to query what games are selling on Steam, filtered by 
 
 ## Tools Used
 The skill was implemented in Python using Flask.Ask. The app is hosted using [Zappa](https://www.zappa.io/) on AWS Lambda (Serverless hosting).
+
+For Python dependencies, see requirementx.txt.
